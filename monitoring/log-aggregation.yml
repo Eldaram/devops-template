@@ -1,0 +1,9 @@
+fluentd:
+  inputs:
+    - type: tail
+      path: /var/log/*.log
+      format: json
+  outputs:
+    - type: elasticsearch
+      host: "localhost"
+      port: 9200

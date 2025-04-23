@@ -1,0 +1,24 @@
+version: "3.9"
+
+services:
+  node-app:
+    build:
+      context: .
+      dockerfile: Dockerfile.node
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./node-app:/app
+    environment:
+      NODE_ENV: development
+
+  python-app:
+    build:
+      context: .
+      dockerfile: Dockerfile.python
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./python-app:/app
+    environment:
+      FLASK_ENV: development
